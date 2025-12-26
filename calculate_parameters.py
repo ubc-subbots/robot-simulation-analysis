@@ -36,7 +36,7 @@ ds = solver.fill_dataset(test_matrix, all_bodies)
 # ds = xr.open_dataset("outputs/added_mass.nc")
 
 # Inspect available variables
-print(ds)
+# print(ds)
 
 # Added mass is usually stored under 'added_mass'
 # indexed by (omega, radiating_dof, forced_dof)
@@ -50,7 +50,7 @@ A = added_mass.isel(omega=freq_index).values
 
 # Pretty print
 np.set_printoptions(precision=8, suppress=True)
-print(A)
+print("Added mass matrix:", A)
 
 mesh = trimesh.load(complex_model)
 print("Center of buoyancy (centroid):", mesh.center_mass)
